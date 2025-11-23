@@ -10,9 +10,10 @@ import java.time.Duration;
 public class alDoileaTestSelenium {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://demoqa.com/");
-        WebElement element =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"card-body\"]")));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[text()='Elements']")));
         element.click();
 
 
